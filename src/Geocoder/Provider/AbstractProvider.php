@@ -68,6 +68,7 @@ abstract class AbstractProvider
                 'north' => null,
                 'east'  => null,
             ],
+            'kind' => null,
             'streetNumber' => null,
             'streetName'   => null,
             'locality'     => null,

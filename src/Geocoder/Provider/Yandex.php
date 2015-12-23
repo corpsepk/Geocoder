@@ -144,6 +144,7 @@ class Yandex extends AbstractHttpProvider implements LocaleAwareProvider
             }
 
             $results[] = array_merge($this->getDefaults(), array(
+                'kind'         => isset($details['kind']) ? $details['kind'] : null,
                 'latitude'     => (float) $coordinates[1],
                 'longitude'    => (float) $coordinates[0],
                 'bounds'       => $bounds,

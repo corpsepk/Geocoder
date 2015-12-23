@@ -44,6 +44,7 @@ final class AddressFactory
                     $this->readDoubleValue($result, 'bounds.north'),
                     $this->readDoubleValue($result, 'bounds.east')
                 ),
+                $this->readStringValue($result, 'kind'),
                 $this->readStringValue($result, 'streetNumber'),
                 $this->readStringValue($result, 'streetName'),
                 $this->readStringValue($result, 'postalCode'),

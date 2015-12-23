@@ -28,6 +28,11 @@ final class Address
     /**
      * @var string|int
      */
+    private $kind;
+
+    /**
+     * @var string|int
+     */
     private $streetNumber;
 
     /**
@@ -75,6 +80,7 @@ final class Address
     public function __construct(
         Coordinates $coordinates          = null,
         Bounds $bounds                    = null,
+        $kind                             = null,
         $streetNumber                     = null,
         $streetName                       = null,
         $postalCode                       = null,
@@ -86,6 +92,7 @@ final class Address
     ) {
         $this->coordinates  = $coordinates;
         $this->bounds       = $bounds;
+        $this->kind         = $kind;
         $this->streetNumber = $streetNumber;
         $this->streetName   = $streetName;
         $this->postalCode   = $postalCode;
@@ -142,6 +149,16 @@ final class Address
     public function getBounds()
     {
         return $this->bounds;
+    }
+
+    /**
+     * Returns the kind value.
+     *
+     * @return string|int
+     */
+    public function getKind()
+    {
+        return $this->kind;
     }
 
     /**
@@ -254,6 +271,7 @@ final class Address
             'latitude'     => $this->getLatitude(),
             'longitude'    => $this->getLongitude(),
             'bounds'       => $this->bounds->toArray(),
+            'kind'         => $this->kind,
             'streetNumber' => $this->streetNumber,
             'streetName'   => $this->streetName,
             'postalCode'   => $this->postalCode,
